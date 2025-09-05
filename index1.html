@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API STATUS CHECKER</title>
+   <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+<div class="bg-gradient-to-l from-blue-500 to-pink-400 h-40 rounded">
+    <center class="text-xl font-bold  pt-10"> API STATUS CHECKER<br><h1 class="text-white">Monitor your endpoints in real time</h1></center>
+</div>
+<center>
+<div id="sum" class="pt-40  font-black">
+    <input class="font-black text-center border border-black" placeholder="Enter the Api here" ><br>
+    <button id="ok" class="mt-10 bg-blue-400 w-40 h-8 rounded"onclick="onto()">CHECK</button>
+<div class="mt-10" id="out"></div>
+</div>
+</center>    
+</body>
+
+<script>
+    function onto(){
+        url=document.getElementById("sum").querySelector("input").value;
+       document.getElementById("ok").style.backgroundColor="pink";
+       document.getElementById("sum").querySelector("input").value="";       
+       fetch(url)
+       .then(response=>{
+       if( response.ok){
+          document.getElementById("out").innerHTML='✅ API is online';
+       }
+    })
+     .catch(error => {
+          document.getElementById("out").innerHTML = `❌ API unreachable: ${error.message}`;
+        });
+
+    }
+</script>
+
+</html>

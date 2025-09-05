@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API STATUS CHECKER</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class=" cursor-pointer bg-gradient-to-l from-blue-500 to-pink-400 ">
+   <center > <div class=" font-bold text-pink-400  text-xl m-50 md:mt-60 mt-20  bg-white rounded-lg shadow-lg p-8 w-80 text-center ">
+           LOGIN <br>
+    <input id="name" class=" border border-pink-500 m-2 text-center rounded" placeholder="UserName"><br>
+    <input id="password" class=" m-2 border border-pink-500   text-center rounded" type="password" placeholder="Password"> <br>
+    <button class=" m-2 text-center h-10 w-20 bg-pink-500 text-white rounded" onclick="onto()">Submit</button>  
+    </div>
+</body>
+<script>
+    function onto(){
+        name=document.getElementById("name").value;
+        password=document.getElementById("password").value;
+        if(name=="")
+    {
+         alert("Enter the Name");
+         return;
+    }
+        if(password=="")
+    {
+           alert("Enter the password");
+           return;
+    }
+         document.getElementById("name").value="";
+         document.getElementById("password").value="";
+
+         window.location.href=`index1.html`;
+    
+}
+</script>
+
+
+</html>
